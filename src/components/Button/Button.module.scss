@@ -1,0 +1,15 @@
+.button {
+  color: var(--buttontext);
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-color: var(--buttontext);
+
+  &_selected {
+    background: var(--buttoncolor);
+  }
+}

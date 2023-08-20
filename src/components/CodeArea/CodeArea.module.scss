@@ -1,0 +1,29 @@
+.code {
+  background: var(--dark);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  &__text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &__icon {
+    padding: 8px;
+    background: var(--Background);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

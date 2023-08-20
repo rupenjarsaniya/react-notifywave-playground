@@ -1,0 +1,290 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+
+  &__testBtn {
+    padding-block: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--errorcolor);
+    background: var(--error-50);
+    border: 1px dashed var(--errorcolor);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5 all ease-in-out;
+
+    &:hover {
+      border-style: solid;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.wrap {
+  display: flex;
+  gap: 32px;
+
+  &__inner {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    &_title {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    &_inputfield {
+      border: 1px solid var(--dark);
+      padding: 4px 8px;
+      font-size: 16px;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--PrimaryText);
+      outline: none;
+    }
+  }
+}
+
+.left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dividerVertical {
+  background: var(--dark);
+  width: 1px;
+}
+
+.dividerHorizonal {
+  background: var(--dark);
+  height: 1px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.glowingBtn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  font-weight: 900;
+  letter-spacing: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowingTxt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faultyLetter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowingBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowingBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowingBtn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowingBtn:hover .glowingTxt {
+  animation: none;
+}
+
+.glowingBtn:hover .faultyLetter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowingBtn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowingBtn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowingBtn {
+    font-size: 1em;
+  }
+}

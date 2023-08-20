@@ -1,0 +1,113 @@
+th,
+td {
+  padding: 8px;
+}
+
+.root {
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__button {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &_contain {
+      &_success {
+        background: var(--success);
+      }
+
+      &_error {
+        background: var(--error);
+      }
+
+      &_warning {
+        background: var(--warning);
+      }
+
+      &_info {
+        background: var(--info);
+      }
+    }
+
+    &_outline {
+      &_success {
+        border-color: var(--success);
+        color: var(--success);
+        background: var(--success-50);
+      }
+
+      &_error {
+        border-color: var(--error);
+        color: var(--error);
+        background: var(--error-50);
+      }
+
+      &_warning {
+        border-color: var(--warning);
+        color: var(--warning);
+        background: var(--warning-50);
+      }
+
+      &_info {
+        border-color: var(--info);
+        color: var(--info);
+        background: var(--info-50);
+      }
+    }
+
+    &_light_success,
+    &_light_error,
+    &_light_warning,
+    &_light_info {
+      color: var(--dark);
+      background: var(--PrimaryText);
+    }
+
+    &_light {
+      &_success {
+        color: var(--success);
+      }
+
+      &_error {
+        color: var(--error);
+      }
+
+      &_warning {
+        color: var(--warning);
+      }
+
+      &_info {
+        color: var(--info);
+      }
+    }
+
+    &_dark_success,
+    &_dark_error,
+    &_dark_warning,
+    &_dark_info {
+      background: var(--dark);
+    }
+
+    &_dark {
+      &_success {
+        color: var(--success);
+      }
+
+      &_error {
+        color: var(--error);
+      }
+
+      &_warning {
+        color: var(--warning);
+      }
+
+      &_info {
+        color: var(--info);
+      }
+    }
+  }
+}
